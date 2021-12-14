@@ -9,7 +9,6 @@ namespace CampaignCommander.Data
         public DbSet<ApplicationUser> Users { get; set;}
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<Game> Games { get; set; }
-        public DbSet<Invitation> Invitations { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

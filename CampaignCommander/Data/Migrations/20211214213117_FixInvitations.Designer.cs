@@ -4,6 +4,7 @@ using CampaignCommander.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CampaignCommander.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211214213117_FixInvitations")]
+    partial class FixInvitations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,7 +112,7 @@ namespace CampaignCommander.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("GameId")
+                    b.Property<int>("GameID")
                         .HasColumnType("int");
 
                     b.Property<string>("GameMasterId")
@@ -119,7 +121,7 @@ namespace CampaignCommander.Data.Migrations
 
                     b.HasKey("CampaignID");
 
-                    b.HasIndex("GameId");
+                    b.HasIndex("GameID");
 
                     b.HasIndex("GameMasterId");
 
@@ -294,7 +296,7 @@ namespace CampaignCommander.Data.Migrations
                 {
                     b.HasOne("CampaignCommander.Data.Game", "Game")
                         .WithMany()
-                        .HasForeignKey("GameId")
+                        .HasForeignKey("GameID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
