@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CampaignCommander.Data;
+using CampaignCommander.Data.ViewModels;
 
 namespace CampaignCommander.Controllers
 {
@@ -58,11 +59,18 @@ namespace CampaignCommander.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CampaignID,CampaignName,CampaignDescription,GameMasterId,GameId")] Campaign campaign)
+        public async Task<IActionResult> Create([Bind("CampaignID,CampaignName,CampaignDescription,GameMasterId,GameId,Invitations")] CampaignViewModel campaign)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(campaign);
+                Campaign newCampaign = new Campaign();
+
+                newCampaign.CampaignName = campaign.CampaignName;
+                newCampaign.CampaignDescription = campaign.CampaignDescription;
+                newCampaign.GameMasterId = campaign.GameMasterId;
+                newCampaign.GameId = campaign.GameId;
+
+                _context.Add(newCampaign);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

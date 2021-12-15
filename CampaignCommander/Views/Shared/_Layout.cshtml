@@ -23,15 +23,14 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                My Campaigns
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Manage
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Campaigns" asp-action="Create">Add New Campaign</a>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Campaigns" asp-action="Index">Manage Campaigns</a>
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Games" asp-action="Index">Manage Games</a>
-                                <div class="dropdown-divider"></div>
-                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Campaigns" asp-action="Create">Add New Campaign</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Campaigns" asp-action="Index">Manage Campaigns</a></li>
+                                <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Games" asp-action="Index">Manage Games</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
