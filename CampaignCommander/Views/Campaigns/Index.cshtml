@@ -37,10 +37,10 @@
                 @Html.DisplayFor(modelItem => item.CampaignDescription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GameMaster.Id)
+                @Html.DisplayFor(modelItem => item.GameMaster.UserName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Game.GameID)
+                @Html.DisplayFor(modelItem => item.Game.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.CampaignID">Edit</a> |

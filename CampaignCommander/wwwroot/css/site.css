@@ -15,4 +15,23 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: azure;
+}
+
+h5, p{
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.carousel-inner{
+    height:40em;
+}
+
+img {
+    width: auto;
+    height:40em;
+    resize:block;
+    image-resolution: 500dpi;
+    opacity:.6;
 }

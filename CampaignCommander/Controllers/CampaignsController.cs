@@ -49,8 +49,8 @@ namespace CampaignCommander.Controllers
         // GET: Campaigns/Create
         public IActionResult Create()
         {
-            ViewData["GameId"] = new SelectList(_context.Games, "GameID", "GameID");
-            ViewData["GameMasterId"] = new SelectList(_context.Users, "Id", "Id");
+            ViewData["GameId"] = new SelectList(_context.Games, "GameID", "Name");
+            ViewData["GameMasterId"] = new SelectList(_context.Users, "Id", "UserName");
             return View();
         }
 
@@ -92,8 +92,8 @@ namespace CampaignCommander.Controllers
             {
                 return NotFound();
             }
-            ViewData["GameId"] = new SelectList(_context.Games, "GameID", "GameID", campaign.GameId);
-            ViewData["GameMasterId"] = new SelectList(_context.Users, "Id", "Id", campaign.GameMasterId);
+            ViewData["GameId"] = new SelectList(_context.Games, "GameID", "Name", campaign.GameId);
+            ViewData["GameMasterId"] = new SelectList(_context.Users, "Id", "UserName", campaign.GameMasterId);
             return View(campaign);
         }
 
